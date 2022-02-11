@@ -6,8 +6,7 @@ THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
  
  
 Authors in chronological order of contribution:
-Author 1
-Author 2
+Geetika Yelugoti
  
 Further Information:
 http://diystream.cns.utexas.edu/
@@ -17,15 +16,184 @@ Timothy Riedel
 triedel@utexas.edu
  
 Brief Description of Goal of Code:
-blah, blah, blah,
+Web-based app that asks user a series of yes or no questions to determine whether the user may be a woman experiencing a heart attack.
  
 Known Issues:
 blah, blah, blah, blah
 -->
 
    <head> 
-      
-	   PUT YOUR OLD CODE IN HERE
-	   
-   </body>
+      <title>Heart Attack?</title>  
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <link rel="stylesheet" href="w3.css">
+      <link rel="stylesheet" href="w3-colors-flat.css">
+   </head> 
+	
+
+<script>
+//script tags embed javascript 
+        var heartattack_count = 0;
+	var somethingelse_count = 0;
+  
+	function heartattackAdd(){
+            heartattack_count = heartattack_count + 1;
+	    document.getElementById('totalheartattack').innerText = heartattack_count;
+	    heartattackPercent();
+        } 
+	
+	function somethingelseAdd(){
+            somethingelse_count = somethingelse_count + 1;
+	    document.getElementById('totalsomethingelse').innerText = somethingelse_count;
+        } 
+        
+        
+	function heartattackPercent(){
+	    heartattack_percent = heartattack_count / 4 * 100
+	    document.getElementById('percentheartattack').innerText = heartattack_percent;
+	}
+
+
+  </script>
+
+
+
+<style>	
+.body {
+     margin: 0em;
+}
+
+.page {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    overflow-y: auto;
+    z-index: 0;
+    background-color: hsl(0,0%,100%);
+}
+
+  .page:target {
+    left: 0vw;
+    z-index: 1;
+}
+</style>
+
+<body>
+<div id="header" class="w3-container w3-flat-carrot">
+	<h1>Do you think you might be having a heart attack?</h1>
+</div>
+	
+<div id="content" class="w3-container">
+	<p>Heart disease is responsible for the most number of deaths in the United States, and it often results in heart attack. One of the primary indicators of heart attack is chest pain, but women often present other symptoms when experiecing a heart attack. Answer a few short questions to determinte if you might be experiencing a heart attack. </p>
+	
+	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
+	
+	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
+ 	
+	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
+
+<div class="page" id="one">
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Question 1</h1>
+	</div>
+	
+    	<div id="content" class="w3-container">
+       		<p>Do you have chest pain or discomfort?</p>    
+    	</div>
+	<a href="#two" onclick="heartattackAdd();" class="w3-btn w3-black"> Yes </a>
+	<a href="#two" onclick="somethingelseAdd();" class="w3-btn w3-black"> No </a>
+	</div>
+</div>
+
+<div class="page" id="two">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 2</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Are you experiencing shortness of breath?</p>
+	</div>
+	<a href="#three" onclick="heartattackAdd();" class="w3-btn w3-black"> Yes </a>
+	<a href="#three" onclick="somethingelseAdd();" class="w3-btn w3-black"> No </a>
+	</div>
+</div>	
+	
+<div class="page" id="three">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 3</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Do you have pain in one or both of your arms?</p>
+	</div>
+	<a href="#four" onclick="heartattackAdd();" class="w3-btn w3-black"> Yes </a>
+	<a href="#four" onclick="somethingelseAdd();" class="w3-btn w3-black"> No </a>
+	</div>
+</div>	
+	
+<div class="page" id="four">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 4</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Do you have jaw pain?</p>
+	</div>
+	<a href="#results" onclick="heartattackAdd();" class="w3-btn w3-black"> Yes </a>
+	<a href="#results" onclick="somethingelseAdd();" class="w3-btn w3-black"> No </a>
+	</div>
+</div>	
+
+<div class="page" id="five">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 4</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Are you experiencing nausea?</p>
+	</div>
+	<a href="#results" onclick="heartattackAdd();" class="w3-btn w3-black"> Yes </a>
+	<a href="#results" onclick="somethingelseAdd();" class="w3-btn w3-black"> No </a>
+	</div>
+</div>	
+
+<div class="page" id="six">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 4</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Do you feel lightheaded?</p>
+	</div>
+	<a href="#results" onclick="heartattackAdd();" class="w3-btn w3-black"> Yes </a>
+	<a href="#results" onclick="somethingelseAdd();" class="w3-btn w3-black"> No </a>
+	</div>
+</div>	
+
+<div class="page" id="results">
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Results</h1>
+	</div>
+<!--used id to return element (value resulting from functions)-->
+	<div> <p>HEART ATTACK TOTAL</p>
+		<p id="totalheartattack"></p>
+	</div>
+	
+	<div> <p>SOMETHING ELSE TOTAL</p>
+		<p id="totalsomethingelse"></p>	
+	</div>
+	
+	<div> <p>PROBABILITY ITS A HEART ATTACK</p>
+		<p id="percentheartattack"></p>
+	</div>
+</div>
+</div>
+
+<footer class="w3-bottom w3-container w3-flat-carrot">
+	<p>DIY!</p>
+</footer>
+
+</body>
 </html>
