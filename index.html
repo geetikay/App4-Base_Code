@@ -33,24 +33,37 @@ pages five and six currently do not show up
 
 <script>
 //script tags embed javascript 
+	
+	//heart_attack variable stores the value of the number of options clicked on that correlate to a symptom of heart attack
         var heartattack_count = 0;
+	//something_esle variable stores the value of the number of options clicked on that correlate to user not experiencing that particular heart attack symptom
 	var somethingelse_count = 0;
   
+	//function adds number of of options clicked on that correlate to a symptom of heart attack
 	function heartattackAdd(){
             heartattack_count = heartattack_count + 1;
+		//current heart attack count before reaching that page +1 if heart attack option is clicked
 	    document.getElementById('totalheartattack').innerText = heartattack_count;
+		//returns element (resulting value of function) using ID 'totalheartattack'
+		//see results page
 	    heartattackPercent();
         } 
 	
+	//function adds number of options clicked on that correlate to user not experiencing those particular heart attack symptoms
 	function somethingelseAdd(){
             somethingelse_count = somethingelse_count + 1;
+		//current something else count before reaching that page +1 if something else option is clicked
 	    document.getElementById('totalsomethingelse').innerText = somethingelse_count;
+		//returns element (resulting value of function) using ID 'totalsomethingelse'
+		//see results page
         } 
-        
-        
+       
+	//fuction caculates probability of heart attack using heartattack_count variable
 	function heartattackPercent(){
 	    heartattack_percent = heartattack_count / 6 * 100
 	    document.getElementById('percentheartattack').innerText = heartattack_percent;
+		//returns element (resulting value of function) using ID 'percentheartattack'
+		//see results page
 	}
 
 
@@ -78,6 +91,13 @@ pages five and six currently do not show up
     left: 0vw;
     z-index: 1;
 }
+	
+
+    img, object{
+    max-height:90%;
+    max-width:90%;
+}
+
 </style>
 
 <body>
@@ -87,6 +107,8 @@ pages five and six currently do not show up
 	
 <div id="content" class="w3-container">
 	<p>Heart disease is responsible for the most number of deaths in the United States, and it often results in heart attack. One of the primary indicators of heart attack is chest pain, but women often present other symptoms when experiecing a heart attack. Answer a few short questions to determinte if you might be experiencing a heart attack. </p>
+	
+	<img src="heatattacksymptoms.jpg" alt="Symptoms of Heart Attack in Men Versus Women">
 	
 	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
 	
